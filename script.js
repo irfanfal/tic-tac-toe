@@ -6,6 +6,17 @@ const submitBTN = document.getElementById("submit")
 const gameboard = document.querySelector(".game-board")
 const control = document.querySelector(".controls")
 
+const winConditions = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6],
+];
+
 
 
 startBTN.addEventListener("click", (event) => {
@@ -61,14 +72,57 @@ const playMove = (cell, data) => {
         return;
     }
 
+    
+
 
     data.board[cell.id] = data.currentPlayer;
     cell.textContent = data.currentPlayer;
     cell.classList.add(data.currentPlayer === "X" ? "player1" : "player2");
+    
 
 
     data.round++;
     console.log(cell, data);
 
-    
+    console.log(typeof(data.board[cell.id]))
+
+    if(endConditions(data)){
+        return
+    }
+
+    changePlayer(data)
+
 }
+
+
+
+const checkWinner = (data) => {
+    let result = false;
+    winConditions.forEach(condition => {
+        if(data.board[condition[0]] === data.board[condition[1]] && 
+            data.board[condition[1]] === data.board[condition[2]]){
+            console.log("player won");
+            data.gameOver = true;
+            result = true;
+        }
+    });
+    return result;
+
+}
+
+const endConditions = (data) => {
+    if(checkWinner(data)){
+        return true;
+    }else if(data.round === 9){
+        return true;
+    }
+}
+
+
+const changePlayer = (data) => {
+    data.currentPlayer = data.currentPlayer === "X" ? "O" : "X";
+}
+
+// const adjustDom = (className, textContent) => {
+//     document.querySelector(`.${className}`).setAttribute()
+// }
