@@ -55,8 +55,13 @@ body, h1{
     margin-top: 20px;
 }
 
+.form-container{
+    display: none;  /* display: block; */
+}
+
+
 #my-form{
-    display: none; /* display: grid; */
+    display: grid; /* display: grid; */
     font-size: 30px;
     background-color: red;
     width: 500px;
