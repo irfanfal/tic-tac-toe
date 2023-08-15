@@ -20,7 +20,7 @@ body, h1{
 .game-board{
     width: 100vw;
     height: auto;
-    display: grid;
+    display: none; /*display grid */
     align-content: center;
     justify-content: center;
     grid-template-columns: repeat(3, auto);
@@ -56,7 +56,7 @@ body, h1{
 }
 
 #my-form{
-    display: grid;
+    display: none; /* display: grid; */
     font-size: 30px;
     background-color: red;
     width: 500px;
