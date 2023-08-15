@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+
+        <div class="controls">
+            <button class="button" id="start-button">Start</button>
+            <button class="button" id="reset-button">Reset</button>
+        </div>
+
+
+        <div class="game-board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+
+        <form id="my-form">
+            <label for="player-1">Player 1</label>
+            <input type="text" id="player-1" name="player-1" required>
+
+            <label for="player-2">Player 2</label>
+            <input type="text" id="player-2" name="player-2" required>
+
+            <div class="pilih-mode">
+                <div>
+                    <label for="mode-1">Human vs Human</label>
+                    <input type="radio" id="mode-1" name="mode">
+                </div>
+
+                <div>
+                    <label for="mode-2">Human vs AI</label>
+                    <input type="radio" id="mode-2" name="mode">
+                </div>
+
+
+            </div>
+            <button type="submit">Submit</button>
+
+
+
+        </form>
+
+
+      
+    
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
