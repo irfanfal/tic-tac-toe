@@ -29,6 +29,11 @@ startBTN.addEventListener("click", (event) => {
     control.style.display = "none";
 })
 
+resetBTN.addEventListener("click", () =>{
+    location.reload();
+})
+
+
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
