@@ -6,6 +6,9 @@ const submitBTN = document.getElementById("submit")
 const gameboard = document.querySelector(".game-board")
 const control = document.querySelector(".controls")
 
+
+
+
 const winConditions = [
     [0,1,2],
     [3,4,5],
@@ -87,7 +90,7 @@ const playMove = (cell, data) => {
     console.log(typeof(data.board[cell.id]))
 
     if(endConditions(data)){
-        return
+        return true;
     }
    
     if(data.mode === 0){
@@ -118,9 +121,18 @@ const checkWinner = (data) => {
 }
 
 const endConditions = (data) => {
-    if(checkWinner(data)){
+    if(checkWinner(data)){ 
+        document.querySelector(".won").style.display = "block";
+
+        if(data.currentPlayer === "X"){
+            document.querySelector(".won").textContent = `${data.player_1Name} WINS`;
+        }else if(data.currentPlayer === "O"){
+            document.querySelector(".won").textContent = `${data.player_2Name} WINS`;
+        }
         return true;
     }else if(data.round === 9){
+        document.querySelector(".won").style.display = "block";
+        document.querySelector(".won").textContent = `DRAW`;
         return true;
     }
 }
@@ -128,6 +140,11 @@ const endConditions = (data) => {
 
 const changePlayer = (data) => {
     data.currentPlayer = data.currentPlayer === "X" ? "O" : "X";
+    if(data.currentPlayer === "X"){
+        document.querySelector(".turn").textContent = `${data.player_1Name} turn`;
+    }else if(data.currentPlayer === "O"){
+        document.querySelector(".turn").textContent = `${data.player_2Name} turn`;
+    }
 }
 
 const AiMove = (data) => {
@@ -141,9 +158,9 @@ const AiMove = (data) => {
       availableSpaces[Math.floor(Math.random() * availableSpaces.length)];
     data.board[move] = data.player2;
     setTimeout(() => {
-      let box = document.getElementById(`${move}`);
-      box.textContent = data.player2;
-      box.classList.add("player2");
+      let cell = document.getElementById(`${move}`);
+      cell.textContent = data.player2;
+      cell.classList.add("player2");
     }, 200);
   
     if (endConditions(data)) {
@@ -154,5 +171,7 @@ const AiMove = (data) => {
 
 
 // const adjustDom = (className, textContent) => {
-//     document.querySelector(`.${className}`).setAttribute()
+//     const elem = document.querySelector(`.${className}`).setAttribute("display", "block");
+//     elem.setAttribute("display", "block");
+//     elem.textContent = textContent;
 // }

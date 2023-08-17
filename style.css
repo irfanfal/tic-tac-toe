@@ -5,9 +5,25 @@ body, h1{
     padding: 0;
 }
 
+h1{
+    color: white;
+    font: bold;
+    font-size: 2em;
+}
+
+
+.title-form{
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 .title-text{
     font-size: 5rem;
     font-weight: bolder;
+    color: white;
+    margin-bottom: 20px;
 }
 
 .container{
@@ -31,6 +47,32 @@ body, h1{
     grid-template-rows: repeat(3, auto)
 }
 
+.turn{
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.won{
+    display: none;
+    font-weight: bold;
+    color: white;
+    font-size: 4em;
+    background-color: rgb(255, 30, 0);
+    padding: 50px;
+    border: 1px solid black;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 0.6rem #ffee00,
+    0 0 0.8rem #ffee00,
+    0 0 1rem #ffee00,
+    inset 0 0 1.3rem #ffee00; 
+    position: absolute;
+    top: 300px;
+
+}
+
 .cell{
     
     border: 1px solid black;
@@ -43,7 +85,6 @@ body, h1{
     justify-content: center;
     cursor: pointer;
     margin: 10px;
-    box-shadow: 1px 2px black;
     color: #fff;
     text-shadow:
     0 0 7px #fff,
@@ -64,7 +105,7 @@ body, h1{
 }
 
 .controls{
-    background-color: red;
+    background-color: rgb(10, 31, 44);
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -96,13 +137,20 @@ body, h1{
 #my-form{
     display: grid; /* display: grid; */
     font-size: 30px;
-    background-color: red;
+    background-color: rgb(23, 23, 114);
     width: 500px;
     height: 500px;
     padding: 50px;
     border: 1px solid black;
-    box-shadow: 5px 5px rgba(128, 128, 128, 0.397);
     margin: 20px;
-
+    color: white;
+    font-weight: bold;
     grid-template-columns: 1fr;
+
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 0.6rem #8c00ff,
+    0 0 0.8rem #8c00ff,
+    0 0 1rem #8c00ff,
+    inset 0 0 1.3rem #8c00ff; 
 }

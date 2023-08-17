@@ -9,13 +9,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>Tic Tac Toe</h1>
+        <div class="title-form">Tic Tac Toe</div>
 
         <div class="controls">
             <div class="title-text">Tic Tac Toe</div>
             <button class="button" id="start-button"><img src="images/play.svg" width="100px" height="100px"></button>
             <!-- <button class="button" id="reset-button">Reset</button> -->
         </div>
+
+        
+
+        <div class="won"></div>
 
 
         <div class="game-board">
@@ -30,23 +34,25 @@
             <div class="cell" id="8"></div>
         </div>
 
+        <div class="turn"></div>
+
         <div class="form-container">
             <form id="my-form">
                 <label for="player-1Name">Player 1</label>
-                <input type="text" id="player-1Name" name="player-1Name" required>
+                <input type="text" id="player_1Name" name="player_1Name" required>
 
                 <label for="player-2Name">Player 2</label>
-                <input type="text" id="player-2Name" name="player-2Name" required>
+                <input type="text" id="player_2Name" name="player_2Name" required>
 
                 <div class="pilih-mode">
                     <div>
                         <label for="mode-1">Human vs Human</label>
-                        <input type="radio" id="mode-1" name="mode" value="0">
+                        <input type="radio" id="mode-1" name="mode" value="0" required>
                     </div>
 
                     <div>
                         <label for="mode-2">Human vs AI</label>
-                        <input type="radio" id="mode-2" name="mode" value ="1">
+                        <input type="radio" id="mode-2" name="mode" value ="1" required>
                     </div>
 
 
