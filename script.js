@@ -5,6 +5,7 @@ const form_container = document.querySelector(".form-container");
 const submitBTN = document.getElementById("submit")
 const gameboard = document.querySelector(".game-board")
 const control = document.querySelector(".controls")
+const resetBTN = document.getElementById("reset");
 
 
 
@@ -34,6 +35,7 @@ form.addEventListener("submit", (event) => {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
     form_container.style.display = "none";
+    resetBTN.style.display = "block";
     gameboard.style.display = "grid";
     initializeGame(data);
 });
@@ -87,7 +89,7 @@ const playMove = (cell, data) => {
     data.round++;
     console.log(cell, data);
 
-    console.log(typeof(data.board[cell.id]))
+    
 
     if(endConditions(data)){
         return true;
@@ -161,17 +163,10 @@ const AiMove = (data) => {
       let cell = document.getElementById(`${move}`);
       cell.textContent = data.player2;
       cell.classList.add("player2");
-    }, 200);
+    }, 100);
   
     if (endConditions(data)) {
       return;
     }
     changePlayer(data);
 };
-
-
-// const adjustDom = (className, textContent) => {
-//     const elem = document.querySelector(`.${className}`).setAttribute("display", "block");
-//     elem.setAttribute("display", "block");
-//     elem.textContent = textContent;
-// }

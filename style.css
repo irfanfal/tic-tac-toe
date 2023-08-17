@@ -154,3 +154,29 @@ h1{
     0 0 1rem #8c00ff,
     inset 0 0 1.3rem #8c00ff; 
 }
+
+#player_1Name,
+#player_2Name,
+#submit{
+    font-weight: bold;
+    font-size: 0.8em
+}
+
+
+
+#reset{
+    display: none;
+    padding: 20px 40px;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    background-color: rgb(23, 23, 114);
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 0.6rem #8c00ff,
+    0 0 0.8rem #8c00ff,
+    0 0 1rem #8c00ff,
+    inset 0 0 1.3rem #8c00ff; 
+}
