@@ -89,8 +89,15 @@ const playMove = (cell, data) => {
     if(endConditions(data)){
         return
     }
+   
+    if(data.mode === 0){
+         changePlayer(data)
+    }else if(data.mode === 1){
+        AiMove(data);
+        data.currentPlayer = "X";
+    }
 
-    changePlayer(data)
+    
 
 }
 
@@ -122,6 +129,29 @@ const endConditions = (data) => {
 const changePlayer = (data) => {
     data.currentPlayer = data.currentPlayer === "X" ? "O" : "X";
 }
+
+const AiMove = (data) => {
+    changePlayer(data);
+
+    data.round++;
+    let availableSpaces = data.board.filter(
+      (space) => space !== "X" && space !== "O"
+    );
+    let move =
+      availableSpaces[Math.floor(Math.random() * availableSpaces.length)];
+    data.board[move] = data.player2;
+    setTimeout(() => {
+      let box = document.getElementById(`${move}`);
+      box.textContent = data.player2;
+      box.classList.add("player2");
+    }, 200);
+  
+    if (endConditions(data)) {
+      return;
+    }
+    changePlayer(data);
+};
+
 
 // const adjustDom = (className, textContent) => {
 //     document.querySelector(`.${className}`).setAttribute()
